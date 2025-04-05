@@ -1,5 +1,6 @@
 library(tidymodels)
-# install.packages('ranger')
+#install.packages('ranger')
+library(ranger)
 
 data(ames)
 housing <- ames %>% janitor::clean_names()

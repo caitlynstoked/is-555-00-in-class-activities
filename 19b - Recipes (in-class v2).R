@@ -101,6 +101,7 @@ flights_fe <- flights %>%
   select(-origin) %>% 
   fastDummies::dummy_cols('carrier', remove_selected_columns=T) 
 
+
 flights_fe %>% glimpse
 
 set.seed(42)

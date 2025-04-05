@@ -191,13 +191,13 @@ library(tidymodels)
 
 titanic_raw <- read_csv('https://www.dropbox.com/s/petmujrpxa3qn3p/titanic.csv?dl=1')
 
-
+glimpse(titanic_raw)
 leo <- titanic_raw %>% 
   janitor::clean_names() %>% 
   mutate(had_cabin = if_else(is.na(cabin), 0, 1)) %>% 
   select(survived, pclass, sex, age, sib_sp, parch, fare, embarked, had_cabin) %>% 
   mutate(across(c(survived, pclass, had_cabin), ~as.factor(.x)))
-
+glimpse(leo)
 set.seed(42)
 leo_split <- initial_split(leo, strata = survived)
 
